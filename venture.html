@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsamer R. Jumad - Technical Venture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <canvas id="galaxy-canvas"></canvas>
+
+    <header class="top-nav">
+        <div class="nav-brand">
+            <h1>Harsamer R. Jumad</h1>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">Featured Project</a></li>
+            <li><a href="venture.html" class="active">Technical Venture</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+        </ul>
+    </header>
+
+    <main class="main-content">
+        <div class="glass-card">
+            <h2>Technical Venture &mdash; Piso WiFi Vendo Business</h2>
+            <p>Designs, deploys, and maintains a piso wifi vendo hotspot business, running since early 2026.</p>
+            
+            <h3>Infrastructure</h3>
+            <ul>
+                <li>Starlink (primary connection)</li>
+                <li>TP-Link smart switch with VLAN segmentation</li>
+                <li>Two COMFAST access points (CF-EW87, CF-EW85)</li>
+            </ul>
+            
+            <h3>Highlights</h3>
+            <ul>
+                <li>Traced recurring customer connectivity drops to AP channel interference combined with a WiFi 6 client compatibility bug, and resolved it by pinning channels and downgrading network mode</li>
+                <li>Planning an infrastructure upgrade path &mdash; replacing an Orange Pi One with a mini PC, and expanding switch capacity with a TP-Link TL-SG105E</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

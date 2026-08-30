@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsamer R. Jumad - Technical Skills</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <canvas id="galaxy-canvas"></canvas>
+
+    <header class="top-nav">
+        <div class="nav-brand">
+            <h1>Harsamer R. Jumad</h1>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">Featured Project</a></li>
+            <li><a href="venture.html">Technical Venture</a></li>
+            <li><a href="skills.html" class="active">Skills</a></li>
+            <li><a href="education.html">Education</a></li>
+        </ul>
+    </header>
+
+    <main class="main-content">
+        <div class="glass-card">
+            <h2>Technical Skills</h2>
+            <dl>
+                <dt>Distributed Databases</dt>
+                <dd>Fragmentation, distributed query processing, and transaction management (2PC, 3PC, ARIES-style recovery). Designed a Boarding House Management System as a distributed-database proposal built around Tawi-Tawi's connectivity constraints.</dd>
+                
+                <dt>Databases (SQL & NoSQL)</dt>
+                <dd>Built FastAPI REST APIs on PostgreSQL, MySQL, MongoDB, Redis, and Cassandra, plus a Neo4j-based Student Management API. Completed 9 lab exercises across MongoDB and Neo4j, including troubleshooting PATH conflicts and version mismatches between MongoDB releases.</dd>
+                
+                <dt>AI & Expert Systems</dt>
+                <dd>Intelligent agent design, toy vs. real-world problem analysis, and knowledge representation (propositional/first-order logic, production rules, scripts, conceptual dependency primitives).</dd>
+                
+                <dt>Systems Administration & Integration</dt>
+                <dd>System integration case studies (an LMS, a hospital information system, a municipal government system) and testing-strategy design for a containerized FastAPI microservice.</dd>
+            </dl>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
