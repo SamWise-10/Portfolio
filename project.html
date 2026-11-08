@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsamer R. Jumad - Featured Project</title>
+    <title>Harsamer R. Jumad — Featured Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <canvas id="galaxy-canvas"></canvas>
+<body class="subpage">
+    <div id="progress" aria-hidden="true"></div>
+
+    <div class="viewport-stage" aria-hidden="true">
+        <canvas id="sequence-canvas"></canvas>
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="stage-vignette"></div>
+    </div>
 
     <header class="top-nav">
         <div class="nav-brand">
-            <h1>Harsamer R. Jumad</h1>
+            <span class="brand-dot" aria-hidden="true"></span>
+            <a href="index.html"><h1>Harsamer R. Jumad</h1></a>
         </div>
         <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
             <span></span>
@@ -30,16 +37,41 @@
         </ul>
     </header>
 
+    <div class="sequence-hud" aria-hidden="true">
+        <span class="hud-indicator"></span>
+        <span class="frame-counter" id="frame-counter">FRAME 001 / 300</span>
+    </div>
+
     <main class="main-content">
         <div class="glass-card">
+            <span class="eyebrow crimson">Capstone Engineering</span>
             <h2>Featured Project &mdash; Capstone Project</h2>
             <h3>Mobile Citizen Reporting System</h3>
             <p>Capstone project: a mobile citizen reporting system built for Bongao, Tawi-Tawi.</p>
-            <ul>
-                <li><strong>Stack:</strong> FastAPI, PostgreSQL, React</li>
-                <li><strong>Methodology:</strong> Agile/Iterative SDLC</li>
-                <li><strong>Architecture:</strong> Three-tier design with cross-cutting concerns for security, data privacy, and deployment</li>
+
+            <ul class="tag-list">
+                <li class="tag-pill">FastAPI</li>
+                <li class="tag-pill">PostgreSQL</li>
+                <li class="tag-pill">React</li>
+                <li class="tag-pill crimson">Agile / Iterative SDLC</li>
+                <li class="tag-pill crimson">Graphviz System Flowcharts</li>
             </ul>
+
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <h3>Technology Stack</h3>
+                    <p>FastAPI backend, PostgreSQL relational database, and React client interface engineered for responsive citizen reporting.</p>
+                </div>
+                <div class="bento-item">
+                    <h3>Methodology</h3>
+                    <p>Agile/Iterative SDLC enabling continuous refinement from an earlier web-app prototype ("Citizen Reporting System") through multiple chapter revisions.</p>
+                </div>
+                <div class="bento-item">
+                    <h3>Three-Tier Architecture</h3>
+                    <p>Three-tier design with cross-cutting concerns for security, data privacy, and deployment.</p>
+                </div>
+            </div>
+
             <h3>Key Highlights</h3>
             <ul>
                 <li>Standardized system roles (Main Administrator, Department Representative) across the proposal</li>
@@ -48,10 +80,18 @@
                 <li>Produced a full 20-slide, university-branded defense deck with native diagrams, embedded UI mockups, and a Taglish defense script</li>
                 <li>Evolved from an earlier web-app prototype ("Citizen Reporting System") through multiple chapter revisions</li>
             </ul>
+
+            <div class="hero-actions" style="margin-top: 28px;">
+                <a href="venture.html" class="btn-primary">Next: Technical Venture &rarr;</a>
+                <a href="index.html" class="btn-ghost">&larr; Back to Scrollytelling Home</a>
+            </div>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Harsamer R. Jumad &middot; Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO)</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-

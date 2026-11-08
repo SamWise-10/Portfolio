@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsamer R. Jumad - Portfolio</title>
+    <title>Harsamer R. Jumad — Interactive Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <canvas id="galaxy-canvas"></canvas>
+    <!-- Decorative visual scroll progress bar -->
+    <div id="progress" aria-hidden="true"></div>
 
+    <!-- Fixed Full-Viewport 300-Frame Sequence & Cyber-Galaxy Stage -->
+    <div class="viewport-stage" aria-hidden="true">
+        <canvas id="sequence-canvas"></canvas>
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="stage-vignette"></div>
+    </div>
+
+    <!-- Fixed Shrinking Header Navigation -->
     <header class="top-nav">
         <div class="nav-brand">
-            <h1>Harsamer R. Jumad</h1>
+            <span class="brand-dot" aria-hidden="true"></span>
+            <a href="index.html"><h1>Harsamer R. Jumad</h1></a>
         </div>
         <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
             <span></span>
@@ -30,19 +40,150 @@
         </ul>
     </header>
 
-    <main class="main-content">
-        <div class="glass-card">
-            <div class="profile-section">
-                <div class="profile-img-container">
-                    <img src="profile.jpg" alt="Harsamer R. Jumad" class="profile-img">
+    <!-- Live Sequence Scrubber HUD -->
+    <div class="sequence-hud" aria-hidden="true">
+        <span class="hud-indicator"></span>
+        <span class="frame-counter" id="frame-counter">FRAME 001 / 300</span>
+    </div>
+
+    <!-- Scrollytelling Narrative Track -->
+    <main class="scrolly-wrapper">
+        <div id="tracked">
+
+            <!-- Stage 1: Hero Introduction (Frames 001 - 060) -->
+            <section class="scroll-step" id="hero">
+                <div class="hero-grid">
+                    <div class="hero-intro story-card">
+                        <span class="eyebrow">BSIT Fourth-Year &middot; MSU-TCTO</span>
+                        <h2 class="hero-title">Harsamer R. <span>Jumad</span></h2>
+                        <p class="hero-subtitle">Full-stack developer, distributed database architect, and independent wireless ISP operator based in Bongao, Tawi-Tawi, Philippines.</p>
+                        <div class="hero-actions">
+                            <a href="#featured-project" class="btn-primary">Explore Work</a>
+                            <a href="project.html" class="btn-ghost">Capstone Deep Dive</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-cue" aria-hidden="true">
+                        <div class="scroll-mouse"></div>
+                        <span class="scroll-cue-label">Scroll to Scrub Sequence</span>
+                    </div>
                 </div>
-                <div class="profile-text">
+            </section>
+
+            <!-- Stage 2: About Me & Portrait (Frames 061 - 120) -->
+            <section class="scroll-step step-align-right" id="about">
+                <div class="glass-card story-card">
+                    <span class="eyebrow">01 / Profile</span>
                     <h2>About Me</h2>
-                    <p>Fourth-year BSIT student with experience across distributed databases, AI and knowledge representation, and full-stack development &mdash; plus hands-on systems experience from independently running a small wireless ISP business in Bongao, Tawi-Tawi.</p>
+                    <div class="profile-section">
+                        <div class="profile-img-container">
+                            <img src="profile.jpg" alt="Harsamer R. Jumad" class="profile-img">
+                        </div>
+                        <div class="profile-text">
+                            <p>Fourth-year BSIT student with experience across distributed databases, AI and knowledge representation, and full-stack development &mdash; plus hands-on systems experience from independently running a small wireless ISP business in Bongao, Tawi-Tawi.</p>
+                        </div>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <span class="stat-value">4th Yr</span>
+                            <span class="stat-label">BSIT @ MSU-TCTO</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value">6+ DBs</span>
+                            <span class="stat-label">SQL, NoSQL &amp; Graph</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value">2026</span>
+                            <span class="stat-label">WISP Operator</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Stage 3: Featured Project — Capstone Project (Frames 121 - 180) -->
+            <section class="scroll-step step-align-left" id="featured-project">
+                <div class="glass-card story-card">
+                    <span class="eyebrow crimson">02 / Featured Project</span>
+                    <h2>Featured Project &mdash; Capstone Project</h2>
+                    <h3>Mobile Citizen Reporting System</h3>
+                    <p>Capstone project: a mobile citizen reporting system built for Bongao, Tawi-Tawi.</p>
+                    <ul class="tag-list">
+                        <li class="tag-pill">FastAPI</li>
+                        <li class="tag-pill">PostgreSQL</li>
+                        <li class="tag-pill">React</li>
+                        <li class="tag-pill crimson">Agile / Iterative SDLC</li>
+                        <li class="tag-pill crimson">SUS &ge; 68 Benchmark</li>
+                    </ul>
+                    <ul>
+                        <li><strong>Architecture:</strong> Three-tier design with cross-cutting concerns for security, data privacy, and deployment</li>
+                        <li>Standardized system roles (Main Administrator, Department Representative) across the proposal</li>
+                        <li>Rebuilt system flowcharts from user-flow to system-process style using Graphviz, with matching narrative revisions</li>
+                        <li>Produced a full 20-slide, university-branded defense deck with native diagrams, embedded UI mockups, and a Taglish defense script</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="project.html" class="btn-primary">View Full Project Page &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stage 4: Technical Venture — Piso WiFi Vendo Business (Frames 181 - 240) -->
+            <section class="scroll-step step-align-right" id="venture">
+                <div class="glass-card story-card">
+                    <span class="eyebrow">03 / Technical Venture</span>
+                    <h2>Piso WiFi Vendo Business</h2>
+                    <p>Designs, deploys, and maintains a piso wifi vendo hotspot business in Bongao, running since early 2026.</p>
+                    <ul class="tag-list">
+                        <li class="tag-pill">Starlink Backhaul</li>
+                        <li class="tag-pill">VLAN Segmentation</li>
+                        <li class="tag-pill crimson">COMFAST CF-EW87 / CF-EW85</li>
+                    </ul>
+                    <h3>Highlights &amp; Operations</h3>
+                    <ul>
+                        <li>Traced recurring customer connectivity drops to AP channel interference combined with a WiFi 6 client compatibility bug, and resolved it by pinning channels and downgrading network mode</li>
+                        <li>Planning an infrastructure upgrade path &mdash; replacing an Orange Pi One with a mini PC, and expanding switch capacity with a TP-Link TL-SG105E</li>
+                    </ul>
+                    <div class="hero-actions">
+                        <a href="venture.html" class="btn-ghost">Explore Infrastructure &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stage 5: Technical Skills & Education Overview (Frames 241 - 300) -->
+            <section class="scroll-step step-align-bottom" id="skills-education">
+                <div class="glass-card story-card story-wide">
+                    <span class="eyebrow crimson">04 / Core Competencies &amp; Academic Background</span>
+                    <h2>Technical Skills &amp; Education</h2>
+                    <div class="bento-grid">
+                        <div class="bento-item">
+                            <h3>Distributed Databases</h3>
+                            <p>Fragmentation, distributed query processing, and transaction management (2PC, 3PC, ARIES-style recovery). Designed a Boarding House Management System for Tawi-Tawi's connectivity constraints.</p>
+                        </div>
+                        <div class="bento-item">
+                            <h3>Databases (SQL &amp; NoSQL)</h3>
+                            <p>Built FastAPI REST APIs on PostgreSQL, MySQL, MongoDB, Redis, Cassandra, and Neo4j. Completed 9 lab exercises across MongoDB and Neo4j.</p>
+                        </div>
+                        <div class="bento-item">
+                            <h3>AI &amp; Expert Systems</h3>
+                            <p>Intelligent agent design, toy vs. real-world problem analysis, and knowledge representation (propositional/first-order logic, production rules, scripts, conceptual dependency primitives).</p>
+                        </div>
+                        <div class="bento-item">
+                            <h3>Systems Admin &amp; Education</h3>
+                            <p><strong>BSIT (Fourth-year)</strong> at Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO). Containerized FastAPI microservice testing &amp; enterprise integration case studies.</p>
+                        </div>
+                    </div>
+                    <div class="hero-actions" style="margin-top: 26px;">
+                        <a href="skills.html" class="btn-primary">Detailed Technical Skills</a>
+                        <a href="education.html" class="btn-ghost">Academic Profile</a>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Harsamer R. Jumad &middot; Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO)</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

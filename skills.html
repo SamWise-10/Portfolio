@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsamer R. Jumad - Technical Skills</title>
+    <title>Harsamer R. Jumad — Technical Skills</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <canvas id="galaxy-canvas"></canvas>
+<body class="subpage">
+    <div id="progress" aria-hidden="true"></div>
+
+    <div class="viewport-stage" aria-hidden="true">
+        <canvas id="sequence-canvas"></canvas>
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="stage-vignette"></div>
+    </div>
 
     <header class="top-nav">
         <div class="nav-brand">
-            <h1>Harsamer R. Jumad</h1>
+            <span class="brand-dot" aria-hidden="true"></span>
+            <a href="index.html"><h1>Harsamer R. Jumad</h1></a>
         </div>
         <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
             <span></span>
@@ -30,24 +37,51 @@
         </ul>
     </header>
 
+    <div class="sequence-hud" aria-hidden="true">
+        <span class="hud-indicator"></span>
+        <span class="frame-counter" id="frame-counter">FRAME 001 / 300</span>
+    </div>
+
     <main class="main-content">
         <div class="glass-card">
+            <span class="eyebrow crimson">Engineering Stack &amp; Domains</span>
             <h2>Technical Skills</h2>
+
+            <ul class="tag-list">
+                <li class="tag-pill">PostgreSQL</li>
+                <li class="tag-pill">MySQL</li>
+                <li class="tag-pill">MongoDB</li>
+                <li class="tag-pill">Redis</li>
+                <li class="tag-pill">Cassandra</li>
+                <li class="tag-pill crimson">Neo4j</li>
+                <li class="tag-pill crimson">FastAPI</li>
+                <li class="tag-pill crimson">Knowledge Representation</li>
+            </ul>
+
             <dl>
                 <dt>Distributed Databases</dt>
                 <dd>Fragmentation, distributed query processing, and transaction management (2PC, 3PC, ARIES-style recovery). Designed a Boarding House Management System as a distributed-database proposal built around Tawi-Tawi's connectivity constraints.</dd>
-                
-                <dt>Databases (SQL & NoSQL)</dt>
+
+                <dt>Databases (SQL &amp; NoSQL)</dt>
                 <dd>Built FastAPI REST APIs on PostgreSQL, MySQL, MongoDB, Redis, and Cassandra, plus a Neo4j-based Student Management API. Completed 9 lab exercises across MongoDB and Neo4j, including troubleshooting PATH conflicts and version mismatches between MongoDB releases.</dd>
-                
-                <dt>AI & Expert Systems</dt>
+
+                <dt>AI &amp; Expert Systems</dt>
                 <dd>Intelligent agent design, toy vs. real-world problem analysis, and knowledge representation (propositional/first-order logic, production rules, scripts, conceptual dependency primitives).</dd>
-                
-                <dt>Systems Administration & Integration</dt>
+
+                <dt>Systems Administration &amp; Integration</dt>
                 <dd>System integration case studies (an LMS, a hospital information system, a municipal government system) and testing-strategy design for a containerized FastAPI microservice.</dd>
             </dl>
+
+            <div class="hero-actions" style="margin-top: 28px;">
+                <a href="education.html" class="btn-primary">Next: Education &rarr;</a>
+                <a href="index.html" class="btn-ghost">&larr; Back to Scrollytelling Home</a>
+            </div>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Harsamer R. Jumad &middot; Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO)</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

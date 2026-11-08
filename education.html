@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsamer R. Jumad - Education</title>
+    <title>Harsamer R. Jumad — Education</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <canvas id="galaxy-canvas"></canvas>
+<body class="subpage">
+    <div id="progress" aria-hidden="true"></div>
+
+    <div class="viewport-stage" aria-hidden="true">
+        <canvas id="sequence-canvas"></canvas>
+        <canvas id="galaxy-canvas"></canvas>
+        <div class="stage-vignette"></div>
+    </div>
 
     <header class="top-nav">
         <div class="nav-brand">
-            <h1>Harsamer R. Jumad</h1>
+            <span class="brand-dot" aria-hidden="true"></span>
+            <a href="index.html"><h1>Harsamer R. Jumad</h1></a>
+        </div>
         <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Menu">
             <span></span>
             <span></span>
@@ -29,14 +37,41 @@
         </ul>
     </header>
 
+    <div class="sequence-hud" aria-hidden="true">
+        <span class="hud-indicator"></span>
+        <span class="frame-counter" id="frame-counter">FRAME 001 / 300</span>
+    </div>
+
     <main class="main-content">
         <div class="glass-card">
+            <span class="eyebrow">Academic Background</span>
             <h2>Education</h2>
             <h3 style="margin-top:0;">Bachelor of Science in Information Technology (BSIT)</h3>
             <p>Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO)</p>
             <p>Bongao, Tawi-Tawi, Philippines</p>
-            <p style="color: var(--accent); margin-top: 15px; font-weight: 500;"><em>Fourth-year student</em></p>
+            <p style="color: var(--accent-cyan); margin-top: 15px; font-weight: 600;"><em>Fourth-year student</em></p>
+
+            <div class="bento-grid" style="margin-top: 28px;">
+                <div class="bento-item">
+                    <h3>Focus Areas</h3>
+                    <p>Distributed database architecture, full-stack systems engineering, artificial intelligence &amp; knowledge representation, and enterprise systems integration.</p>
+                </div>
+                <div class="bento-item">
+                    <h3>Capstone Research</h3>
+                    <p>Mobile Citizen Reporting System built for Bongao, Tawi-Tawi using FastAPI, PostgreSQL, and React under an Agile/Iterative SDLC.</p>
+                </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 28px;">
+                <a href="index.html" class="btn-primary">&larr; Back to Scrollytelling Home</a>
+                <a href="project.html" class="btn-ghost">View Capstone Project</a>
+            </div>
+        </div>
     </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Harsamer R. Jumad &middot; Mindanao State University &ndash; Tawi-Tawi College of Technology and Oceanography (MSU-TCTO)</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
